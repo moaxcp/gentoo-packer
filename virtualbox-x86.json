@@ -1,0 +1,78 @@
+{
+  "builders": [
+    {
+      "boot_command": [
+        "gentoo-nofb",
+        "<enter>",
+        "<wait10>",
+        "<enter>",
+        "<wait10>",
+        "<wait10>",
+        "<wait10>",
+        "<wait10>",
+        "<wait10>",
+        "passwd {{user `username`}}",
+        "<enter>",
+        "<wait>",
+        "{{user `password`}}",
+        "<enter>",
+        "<wait>",
+        "{{user `password`}}",
+        "<enter>",
+        "<wait>",
+        "/etc/init.d/sshd start",
+        "<enter>",
+        "<wait>"
+      ],
+      "boot_wait": "5s",
+      "disk_size": 60000,
+      "guest_additions_mode": "disable",
+      "guest_os_type": "Gentoo",
+      "headless": false,
+      "iso_checksum": "4d6b7e6ec411b8536221ea5a5c5e7f2d0fa766d99727a6593bcbffa0aff0409a84486306217a6c208cc8b1504c3088711838fec57e0af2c5338e90978342b7bf",
+      "iso_checksum_type": "sha512",
+      "iso_url": "http://ftp.jaist.ac.jp/pub/Linux/Gentoo/releases/x86/autobuilds/{{user `stage3`}}/install-x86-minimal-{{user `stage3`}}.iso",
+      "shutdown_command": "shutdown -hP now",
+      "ssh_password": "{{user `password`}}",
+      "ssh_username": "{{user `username`}}",
+      "ssh_wait_timeout": "20s",
+      "type": "virtualbox-iso",
+      "vm_name": "Gentoo"
+    }
+  ],
+  "description": "Faithful Stage 3 Gentoo Installation (VirtualBox)",
+  "post-processors": [
+    {
+      "output": "gentoo-x86-multilib-stage3-virtualbox.box",
+      "type": "vagrant"
+    }
+  ],
+  "provisioners": [
+    {
+      "destination": "/tmp",
+      "source": "scripts",
+      "type": "file"
+    },
+    {
+      "environment_vars": [
+        "STAGE3={{user `stage3`}}",
+        "ARCH={{user `arch`}}",
+        "SUBARCH={{user `subarch`}}",
+        "VM_TYPE=virtualbox",
+        "SCRIPTS=/tmp"
+      ],
+      "scripts": [
+        "provision.sh"
+      ],
+      "type": "shell"
+    }
+  ],
+  "variables": {
+    "password": "packer",
+    "stage3": "20141209",
+    "arch": "x86",
+    "subarch": "i686",
+    "username": "root"
+  }
+}
+

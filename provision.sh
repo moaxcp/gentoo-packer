@@ -26,6 +26,7 @@ for script in \
   $VM_TYPE    \
   network     \
   vagrant     \
+  arduino     \
   cleanup
 do
   "$SCRIPTS/scripts/$script.sh"

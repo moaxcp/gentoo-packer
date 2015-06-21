@@ -2,3 +2,4 @@ packer_cache/
 /*.box
 output-virtualbox-iso/
 output-vmware-iso/
+.vagrant

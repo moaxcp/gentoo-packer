@@ -32,7 +32,7 @@
       "iso_checksum": "d3e4d5b7da51a316bd0cb0db467adcdf8bdd5945b9569a199c305a0438d684e851b8749528c6aaee902685cf84001886aaf3589bed9a44535d9a9ebea4aab32a",
       "iso_checksum_type": "sha512",
       "iso_url": "http://distfiles.gentoo.org/releases/amd64/autobuilds/{{user `stage3`}}/install-amd64-minimal-{{user `stage3`}}.iso",
-      "shutdown_command": "shutdown -hP now",
+      "shutdown_command": "poweroff",
       "ssh_password": "{{user `password`}}",
       "ssh_username": "{{user `username`}}",
       "ssh_wait_timeout": "20s",

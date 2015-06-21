@@ -8,7 +8,7 @@ fi
 
 if [[ -z $SCRIPTS ]]
 then
-  SCRIPTS=.
+  echo "SCRIPTS environment variable must be set to a directory."
 fi
 
 echo "current directory"
@@ -28,15 +28,7 @@ ls -l "$SCRIPTS/files"
 echo "ordered directory"
 ls -l "$SCRIPTS/ordered"
 
-for script in $SCRIPTS/ordered/*.sh
-do
-  echo "running $script"
-  $script
-done
-echo "running $VM_TYPE.sh"
-$SCRIPTS/$VM_TYPE.sh
+echo "starting scripts on guest."
+$SCRIPTS/start.sh
 
-echo "running cleanup.sh"
-$SCRIPTS/cleanup.sh
-
-echo "All done."
+echo "provision.sh complete"

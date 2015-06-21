@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cp $SCRIPTS/scripts/kernel.config /mnt/gentoo/tmp/
+cp $SCRIPTS/files/kernel.config /mnt/gentoo/tmp/
 
 chroot /mnt/gentoo /bin/bash <<'EOF'
 emerge sys-kernel/gentoo-sources

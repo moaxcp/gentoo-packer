@@ -11,24 +11,32 @@ then
   SCRIPTS=.
 fi
 
-chmod +x $SCRIPTS/scripts/*.sh
+echo "current directory"
+pwd
+ls -l
 
-for script in \
-  partition   \
-  stage3      \
-  mounts      \
-  resolv.conf \
-  portage     \
-  timezone    \
-  fstab       \
-  kernel      \
-  grub        \
-  $VM_TYPE    \
-  network     \
-  vagrant     \
-  cleanup
+echo "scripts set to $SCRIPTS"
+
+chmod -R +x $SCRIPTS/*
+
+echo "scripts directory"
+ls -l $SCRIPTS
+
+echo "files directory"
+ls -l "$SCRIPTS/files"
+
+echo "ordered directory"
+ls -l "$SCRIPTS/ordered"
+
+for script in $SCRIPTS/ordered/*.sh
 do
-  "$SCRIPTS/scripts/$script.sh"
+  echo "running $script"
+  $script
 done
+echo "running $VM_TYPE.sh"
+./$VM_TYPE.sh
+
+echo "running cleanup.sh"
+echo ./cleanup.sh
 
 echo "All done."

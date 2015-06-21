@@ -37,7 +37,21 @@
       "ssh_username": "{{user `username`}}",
       "ssh_wait_timeout": "20s",
       "type": "virtualbox-iso",
-      "vm_name": "Gentoo"
+      "vm_name": "Gentoo",
+      "vboxmanage": [
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--memory",
+          "2048"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--cpus",
+          "4"
+        ]
+      ]
     }
   ],
   "description": "Faithful Stage 3 Gentoo Installation (VirtualBox)",
@@ -50,7 +64,7 @@
   "provisioners": [
     {
       "destination": "/tmp",
-      "source": "scripts",
+      "source": "scripts/",
       "type": "file"
     },
     {

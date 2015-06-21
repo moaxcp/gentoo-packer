@@ -34,9 +34,9 @@ do
   $script
 done
 echo "running $VM_TYPE.sh"
-./$VM_TYPE.sh
+$SCRIPTS/$VM_TYPE.sh
 
 echo "running cleanup.sh"
-echo ./cleanup.sh
+echo $SCRIPTS/cleanup.sh
 
 echo "All done."

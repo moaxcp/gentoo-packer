@@ -25,7 +25,7 @@
         "<wait>"
       ],
       "boot_wait": "5s",
-      "disk_size": 60000,
+      "disk_size": 30720,
       "guest_additions_mode": "disable",
       "guest_os_type": "Gentoo_64",
       "headless": false,

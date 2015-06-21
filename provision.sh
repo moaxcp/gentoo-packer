@@ -37,6 +37,6 @@ echo "running $VM_TYPE.sh"
 $SCRIPTS/$VM_TYPE.sh
 
 echo "running cleanup.sh"
-echo $SCRIPTS/cleanup.sh
+$SCRIPTS/cleanup.sh
 
 echo "All done."

@@ -5,6 +5,7 @@ cd /usr/src/linux && make clean
 emerge -C sys-kernel/gentoo-sources
 emerge --depclean
 
+echo "removing /usr/portage /tmp/* and /var/tmp/*"
 rm -rf /usr/portage
 rm -rf /tmp/*
 rm -rf /var/tmp/*

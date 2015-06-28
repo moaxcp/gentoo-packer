@@ -63,18 +63,17 @@
   ],
   "provisioners": [
     {
-      "destination": "/tmp",
+      "destination": "/root",
       "source": "scripts/",
       "type": "file"
     },
     {
       "environment_vars": [
         "STAGE3={{user `stage3`}}",
-        "VM_TYPE=virtualbox",
-        "SCRIPTS=/tmp"
+        "VM_TYPE=virtualbox"
       ],
       "type": "shell",
-      "inline": ["/tmp/provision.sh"]
+      "inline": ["cd /root", "chmod u+x provision.sh", "./provision.sh"]
     }
   ],
   "variables": {

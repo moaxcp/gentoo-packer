@@ -6,47 +6,42 @@ then
   exit 1
 fi
 
-if [[ -z $SCRIPTS ]]
-then
-  echo "SCRIPTS environment variable must be set to a directory."
-fi
-
 echo "current directory"
 pwd
 ls -l
 
 echo "scripts set to $SCRIPTS"
 
-chmod -R +x $SCRIPTS/*
+chmod -R +x *
 
-echo "scripts directory"
-ls -l $SCRIPTS
+echo "directory"
+ls -l .
 
 echo "files directory"
-ls -l "$SCRIPTS/files"
+ls -l "files"
 
 echo "prepare directory"
-ls -l "$SCRIPTS/prepare"
+ls -l "prepare"
 
 echo "provision directory"
-ls -l "$SCRIPTS/provision"
+ls -l "provision"
 
-for script in $SCRIPTS/prepare/*.sh
+for script in prepare/*.sh
 do
   echo "running $script"
   $script
 done
 
-for script in $SCRIPTS/provision/*.sh
+for script in provision/*.sh
 do
   echo "running $script"
   $script
 done
 
 echo "running $VM_TYPE.sh"
-$SCRIPTS/$VM_TYPE.sh
+$VM_TYPE.sh
 
 echo "running cleanup.sh"
-$SCRIPTS/cleanup.sh
+cleanup.sh
 
 echo "provision.sh complete"

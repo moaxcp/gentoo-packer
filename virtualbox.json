@@ -73,10 +73,8 @@
         "VM_TYPE=virtualbox",
         "SCRIPTS=/tmp"
       ],
-      "scripts": [
-        "provision.sh"
-      ],
-      "type": "shell"
+      "type": "shell",
+      "inline": ["/tmp/provision.sh"]
     }
   ],
   "variables": {

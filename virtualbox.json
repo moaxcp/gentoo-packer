@@ -54,10 +54,10 @@
       ]
     }
   ],
-  "description": "Faithful Stage 3 Gentoo Installation (VirtualBox)",
+  "description": "Gentoo Installation (VirtualBox)",
   "post-processors": [
     {
-      "output": "gentoo-amd64-stage3-virtualbox.box",
+      "output": "/tmp/gentoo-amd64-stage3-virtualbox.box",
       "type": "vagrant"
     }
   ],

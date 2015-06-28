@@ -25,8 +25,11 @@ ls -l $SCRIPTS
 echo "files directory"
 ls -l "$SCRIPTS/files"
 
-echo "ordered directory"
-ls -l "$SCRIPTS/ordered"
+echo "prepare directory"
+ls -l "$SCRIPTS/prepare"
+
+echo "provision directory"
+ls -l "$SCRIPTS/provision"
 
 echo "starting scripts on guest."
 $SCRIPTS/start.sh

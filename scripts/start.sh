@@ -11,11 +11,18 @@ then
   echo "SCRIPTS environment variable must be set to a directory."
 fi
 
-for script in $SCRIPTS/ordered/*.sh
+for script in $SCRIPTS/prepare/*.sh
 do
   echo "running $script"
   $script
 done
+
+for script in $SCRIPTS/provision/*.sh
+do
+  echo "running $script"
+  $script
+done
+
 echo "running $VM_TYPE.sh"
 $SCRIPTS/$VM_TYPE.sh
 

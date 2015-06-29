@@ -32,10 +32,12 @@ do
   $script
 done
 
+cp -r provision /mnt/gentoo/root
+
 for script in provision/*.sh
 do
   echo "running $script"
-  $script
+  chroot /mnt/gentoo /root/$script
 done
 
 echo "running $VM_TYPE.sh"

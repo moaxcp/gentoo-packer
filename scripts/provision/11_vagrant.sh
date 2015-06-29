@@ -1,6 +1,4 @@
 #!/bin/bash
-
-chroot /mnt/gentoo /bin/bash <<'EOF'
 USE="-sendmail" emerge app-admin/sudo
 emerge net-fs/nfs-utils
 useradd -m -s /bin/bash vagrant
@@ -13,4 +11,3 @@ chmod 0700 ~vagrant/.ssh
 chmod 0600 ~vagrant/.ssh/authorized_keys
 chown -R vagrant: ~vagrant/.ssh
 rc-update add sshd default
-EOF

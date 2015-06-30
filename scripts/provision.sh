@@ -41,9 +41,9 @@ do
 done
 
 echo "running $VM_TYPE.sh"
-$VM_TYPE.sh
+/root/$VM_TYPE.sh
 
 echo "running cleanup.sh"
-cleanup.sh
+/root/cleanup.sh
 
 echo "provision.sh complete"

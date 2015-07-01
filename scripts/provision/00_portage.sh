@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "emerge-webrsync"
 emerge-webrsync
-echo "sync"
+echo "starting sync"
 emerge --sync --quiet
 echo "updating make.conf"
 echo "MAKEOPTS=\"-j5 -l4\"" >> /etc/portage/make.conf

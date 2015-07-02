@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -e
 cd /
 mount /dev/sda1 /mnt/gentoo/boot
 mount -t proc proc /mnt/gentoo/proc

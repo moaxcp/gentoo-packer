@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 echo "emerge-webrsync"
 emerge-webrsync
 echo "starting sync"

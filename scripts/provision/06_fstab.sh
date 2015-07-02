@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -e
 chroot /mnt/gentoo /bin/bash <<'EOF'
 cat > /etc/fstab <<'DATA'
 # <fs>		<mount>	<type>	<opts>		<dump/pass>

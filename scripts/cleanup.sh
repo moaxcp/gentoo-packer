@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -e
 chroot /mnt/gentoo /bin/bash <<'EOF'
 cd /usr/src/linux && make clean
 emerge -C sys-kernel/gentoo-sources

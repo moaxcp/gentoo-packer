@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 sed -i 's/^#\s*GRUB_CMDLINE_LINUX=.*/GRUB_CMDLINE_LINUX="net.ifnames=0"/' \
   /etc/default/grub
 grub2-mkconfig -o /boot/grub/grub.cfg

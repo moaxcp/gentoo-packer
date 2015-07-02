@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 echo "generating locale"
 #overwriting file first
 echo "en_US ISO-8859-1" > /etc/locale.gen

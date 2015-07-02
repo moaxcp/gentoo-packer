@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 echo "progressing from stage 1 to stage 2"
 /usr/portage/scripts/bootstrap.sh
 gcc-config -l

@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -e
 chroot /mnt/gentoo /bin/bash <<'EOF'
 emerge "app-emulation/virtualbox-guest-additions"
 

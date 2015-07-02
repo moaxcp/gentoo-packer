@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -e
 if [[ -z $STAGE3 ]]
 then
   echo "STAGE3 environment variable must be set to a timestamp."

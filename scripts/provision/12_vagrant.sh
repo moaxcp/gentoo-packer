@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 USE="-sendmail" emerge app-admin/sudo
 emerge net-fs/nfs-utils
 useradd -m -s /bin/bash vagrant

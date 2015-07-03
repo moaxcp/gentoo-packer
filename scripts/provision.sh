@@ -23,8 +23,8 @@ ls -l "files"
 echo "prepare directory"
 ls -l "prepare"
 
-echo "provision directory"
-ls -l "provision"
+echo "install directory"
+ls -l "install"
 
 for script in prepare/*.sh
 do
@@ -32,9 +32,9 @@ do
   $script
 done
 
-cp -r provision /mnt/gentoo/root
+cp -r install /mnt/gentoo/root
 
-for script in provision/*.sh
+for script in install/*.sh
 do
   echo "running $script"
   chroot /mnt/gentoo /root/$script

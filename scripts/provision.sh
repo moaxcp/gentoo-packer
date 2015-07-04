@@ -38,10 +38,4 @@ cp -r install /mnt/gentoo/root
 cp install.sh /mnt/gentoo/root
 chroot /mnt/gentoo /root/install.sh
 
-echo "running $VM_TYPE.sh"
-/root/$VM_TYPE.sh
-
-echo "running cleanup.sh"
-/root/cleanup.sh
-
 echo "provision.sh complete"

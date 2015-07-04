@@ -70,10 +70,23 @@
     {
       "environment_vars": [
         "STAGE3={{user `stage3`}}",
-        "VM_TYPE=virtualbox"
       ],
       "type": "shell",
       "inline": ["cd /root", "chmod u+x provision.sh", "./provision.sh"]
+    },
+    {
+      "type": "shell",
+      "inline": ["cd /root", "chmod u+x virtualbox.sh", "./virtualbox.sh"],
+      "only": ["virtualbox-iso"]
+    },
+    {
+      "type": "shell",
+      "inline": ["cd /root", "chmod u+x vmware.sh", "./vmware.sh"],
+      "only": ["vmware-iso"]
+    },
+    {
+      "type": "shell",
+      "inline": ["cd /root", "chmod u+x cleanup.sh", "./cleanup.sh"]
     }
   ],
   "variables": {

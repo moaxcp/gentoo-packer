@@ -8,3 +8,4 @@ locale-gen
 eselect locale set 1
 echo "set locale to 1"
 eselect locale list
+env-update && source /etc/profile && export PS1="(chroot) $PS1"

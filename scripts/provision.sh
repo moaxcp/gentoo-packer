@@ -32,13 +32,11 @@ do
   $script
 done
 
-cp -r install /mnt/gentoo/root
+install.sh
 
-for script in install/*.sh
-do
-  echo "running $script"
-  chroot /mnt/gentoo /root/$script
-done
+cp -r install /mnt/gentoo/root
+cp install.sh /mnt/gentoo/root
+chroot /mnt/gentoo /root/install.sh
 
 echo "running $VM_TYPE.sh"
 /root/$VM_TYPE.sh

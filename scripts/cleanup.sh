@@ -1,10 +1,11 @@
 #!/bin/bash
 set -e
+
+chroot /mnt/gentoo /bin/bash <<'EOF'
 env-update
 source /etc/profile
 export PS1="(chroot) $PS1"
 
-chroot /mnt/gentoo /bin/bash <<'EOF'
 cd /usr/src/linux && make clean
 emerge --depclean
 

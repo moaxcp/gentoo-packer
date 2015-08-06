@@ -18,13 +18,10 @@ echo "directory"
 ls -l .
 
 echo "files directory"
-ls -l "files"
+ls -l files
 
 echo "prepare directory"
-ls -l "prepare"
-
-echo "install directory"
-ls -l "install"
+ls -l prepare
 
 for script in prepare/*.sh
 do
@@ -32,10 +29,15 @@ do
   $script
 done
 
-install.sh
-
 cp -r install /mnt/gentoo/root
 cp install.sh /mnt/gentoo/root
+
+echo "root directory"
+ls -l /mnt/gentoo/root
+
+echo "install directory"
+ls -l /mnt/gentoo/root/install
+
 chroot /mnt/gentoo /root/install.sh
 
 echo "provision.sh complete"

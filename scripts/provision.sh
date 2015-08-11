@@ -23,6 +23,7 @@ ls -l files
 echo "prepare directory"
 ls -l prepare
 
+echo "running prepare scripts"
 for script in prepare/*.sh
 do
   echo "running $script"

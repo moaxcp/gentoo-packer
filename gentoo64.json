@@ -73,10 +73,6 @@
       ],
       "type": "shell",
       "inline": ["cd /root", "chmod u+x provision.sh", "./provision.sh"]
-    },
-    {
-      "type": "shell",
-      "inline": ["cd /root", "chmod u+x cleanup.sh", "./cleanup.sh"]
     }
   ],
   "variables": {

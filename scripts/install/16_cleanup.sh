@@ -1,7 +1,6 @@
 #!/bin/bash
 set -e
 
-chroot /mnt/gentoo /bin/bash <<'EOF'
 env-update
 source /etc/profile
 export PS1="(chroot) $PS1"
@@ -35,4 +34,3 @@ swapoff $swappart;
 dd if=/dev/zero of=$swappart;
 mkswap $swappart;
 swapon $swappart;
-EOF

@@ -37,7 +37,7 @@
       "ssh_username": "{{user `username`}}",
       "ssh_wait_timeout": "20s",
       "type": "virtualbox-iso",
-      "vm_name": "Gentoo",
+      "vm_name": "gentoo64",
       "vboxmanage": [
         [
           "modifyvm",
@@ -54,10 +54,10 @@
       ]
     }
   ],
-  "description": "Gentoo Installation (VirtualBox)",
+  "description": "gentoo64 (VirtualBox)",
   "post-processors": [
     {
-      "output": "/tmp/gentoo-amd64-stage3-virtualbox.box",
+      "output": "/tmp/gentoo64-virtualbox.box",
       "type": "vagrant"
     }
   ],

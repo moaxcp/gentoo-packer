@@ -20,12 +20,13 @@ Currently, only virtualbox is supported as I do not have VMWare tools to build w
 * use poweroff for shutdown (this is gentoo!)
 * update minimal install and stage3 versions used
 * move kernel-config to guest properly
+* build according to arch (amd64, x86) not virtual machine platform
 
 Usage
     install VirtualBox, packer, and vagrant
-    git clone https://github.com/moaxcp/gentoo64.git
-    cd gentoo64
-    packer build virtualbox.json
+    git clone https://github.com/moaxcp/gentoo-packer.git
+    cd gentoo-packer
+    packer build gentoo64.json
     vagrant init /tmp/gentoo64-virtualbox.box
     vagrant up
     vagrant ssh

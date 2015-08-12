@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+#set -e
 
 env-update
 source /etc/profile
@@ -29,8 +29,15 @@ let count--
 dd if=/dev/zero of=/boot/whitespace bs=1024 count=$count;
 rm /boot/whitespace;
 
+echo 'Whiteout swap'
 swappart=`cat /proc/swaps | tail -n1 | awk -F ' ' '{print $1}'`
+echo "swappart is ${swappart}"
+
+echo 'turning swap off'
 swapoff $swappart;
+echo 'writing zeros'
 dd if=/dev/zero of=$swappart;
+echo "mkswap ${swappart}"
 mkswap $swappart;
+echo "swapon ${swappart}"
 swapon $swappart;

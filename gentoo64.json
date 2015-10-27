@@ -29,9 +29,9 @@
       "guest_additions_mode": "disable",
       "guest_os_type": "Gentoo_64",
       "headless": false,
-      "iso_checksum": "911ac7e991e19ecae09ab7b37b66aea303bc8394f030139d9e54b5a4ef798b595beef785efff3218a5ecad53cd93fb931d46951a73c60dafbaf25f2ef707494b",
+      "iso_checksum": "{{user `stage3-sum`}}",
       "iso_checksum_type": "sha512",
-      "iso_url": "http://distfiles.gentoo.org/releases/amd64/autobuilds/{{user `stage3`}}/install-amd64-minimal-{{user `stage3`}}.iso",
+      "iso_url": "http://distfiles.gentoo.org/releases/amd64/autobuilds/{{user `stage3-date`}}/install-amd64-minimal-{{user `stage3-date`}}.iso",
       "shutdown_command": "poweroff",
       "ssh_password": "{{user `password`}}",
       "ssh_username": "{{user `username`}}",
@@ -63,13 +63,22 @@
   ],
   "provisioners": [
     {
+      "type": "shell-local",
+      "command": "wget http://distfiles.gentoo.org/releases/amd64/autobuilds/{{user `stage3-date`}}/stage3-amd64-{{user `stage3-date`}}.tar.bz2"
+    },
+    {
+      "type": "file",
+      "source": "stage3-amd64-{{user `stage3-date`}}.tar.bz2",
+      "destination": "/root"
+    },
+    {
       "destination": "/root",
       "source": "scripts/",
       "type": "file"
     },
     {
       "environment_vars": [
-        "STAGE3={{user `stage3`}}"
+        "STAGE3={{user `stage3-date`}}"
       ],
       "type": "shell",
       "inline": ["cd /root", "chmod u+x provision.sh", "./provision.sh"]
@@ -77,7 +86,8 @@
   ],
   "variables": {
     "password": "packer",
-    "stage3": "20150730",
+    "stage3-date": "20150924",
+    "stage3-sum": "075212e58ddec6ef04791fc90c573c450b24b34ae38eccaf29cc6c17b7436148e4ef4f133cf48d84aa597e02117b3bda7086d2a7176224c208f71dba2622a913",
     "username": "root"
   }
 }
